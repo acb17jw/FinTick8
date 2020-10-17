@@ -1,0 +1,58 @@
+package scrapers;
+
+import java.util.List;
+
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+import com.gargoylesoftware.htmlunit.html.HtmlElement;
+import com.gargoylesoftware.htmlunit.html.HtmlForm;
+import com.gargoylesoftware.htmlunit.html.HtmlInput;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+public class NetflixScraper {
+
+	
+public static void main(String[] args) {
+	
+	WebClient client = new WebClient();
+	client.getOptions().setCssEnabled(true);
+	client.getOptions().setJavaScriptEnabled(false);
+	try {
+	
+		HtmlPage page = (HtmlPage) client.getPage("https://www.netflix.com/pl/login");
+		HtmlForm form = (HtmlForm) page.getFirstByXPath("//form[@class='login-form']");
+		form.getInputByName("userLoginId").setValueAttribute("hube0x@gmail.com"); 
+		form.getInputByName("password").setValueAttribute("Liwiaihubertnetflix2543");
+		
+		page = ((HtmlInput) form.getFirstByXPath("//button[@data-uia='login-submit-button']")).click(); // works fine
+		
+		System.out.println(page.asText()); 	
+		
+		/*
+		String searchUrl = "https://www.netflix.com/YourAccount";
+		HtmlPage page2 = client.getPage(searchUrl);
+		  
+		List<HtmlElement> items = (List<HtmlElement>) page2.getByXPath("//li[@class='single-profile']") ;
+		if(items.isEmpty()){
+		  System.out.println("No items found !");
+		}else{
+		for(HtmlElement item : items){
+		
+		  HtmlAnchor itemAnchor = ((HtmlAnchor) item.getFirstByXPath(".//a/span[@data-uia='action-viewing-activity']")) ;
+		
+		  String itemUrl =  itemAnchor.getHrefAttribute();
+		
+		  
+		  System.out.println(itemUrl);
+		  }
+		}
+		*/
+	  
+	}catch(Exception e){
+	  e.printStackTrace();
+	}
+	
+	
+	
+}
+}
