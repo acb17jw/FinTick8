@@ -1,6 +1,5 @@
 package scrapers;
 
-import java.io.File;
 import java.util.List;
 
 import com.gargoylesoftware.htmlunit.WebClient;
@@ -13,17 +12,18 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class NetflixScraper implements Scraper{
 
+
 public String getDate() {
 	WebClient client = new WebClient();
 	client.getOptions().setCssEnabled(false);
 	client.getOptions().setJavaScriptEnabled(false);
 	try {
 	
-		/*
+		
 		HtmlPage page = (HtmlPage) client.getPage("https://www.netflix.com/pl/login");
 		HtmlForm form = (HtmlForm) page.getFirstByXPath("//form[@class='login-form']");
 		form.getInputByName("userLoginId").setValueAttribute("hube0x@gmail.com"); 
-		form.getInputByName("password").setValueAttribute("-");
+		form.getInputByName("password").setValueAttribute("Liwiaihubertnetflix2543");
 		
 		System.out.println("pass: "+ form.getInputByName("password").asText());
 		HtmlButton submitButton = form.getFirstByXPath("//button[@data-uia='login-submit-button']");
@@ -44,13 +44,8 @@ public String getDate() {
 		 
 		HtmlPage page3 = client.getPage("https://www.netflix.com" + itemUrl);
 		
-		*/
-		File file = new File("src/main/resources/websites/Netflix.html");
-		String path = file.getAbsolutePath();
 		
-		System.out.print(path);
-		
-		HtmlPage page3 = client.getPage("file:///"+path);
+		//HtmlPage page3 = client.getPage("file:///home/hbaran/eclipse-workspace-hack/scraper/src/main/resources/websites/Netflix.html");
 		
 		System.out.println(page3.asText());
 		

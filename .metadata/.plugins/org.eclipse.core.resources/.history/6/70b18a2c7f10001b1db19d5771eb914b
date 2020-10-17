@@ -1,7 +1,5 @@
 package scrapers;
 
-import java.io.File;
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.html.HtmlButton;
@@ -9,8 +7,8 @@ import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-public class AllegroSmartScraper  implements Scraper{
-	
+public class AllegroSmartScraper implements Scraper {
+
 	public String getDate() {
 		WebClient client = new WebClient();
 		client.getOptions().setCssEnabled(false);
@@ -26,10 +24,8 @@ public class AllegroSmartScraper  implements Scraper{
 			page = submitButton.click();
 			System.out.println(page.asText()); 	
 			*/
-			File file = new File("src/main/resources/websites/allegro.html");
-			String path = file.getAbsolutePath();
 			
-			HtmlPage page2 = client.getPage("file:///"+path);
+			HtmlPage page2 = client.getPage("file:///home/hbaran/eclipse-workspace-hack/scraper/src/main/resources/websites/allegro.html");
 			
 			HtmlElement lastBoughtItem = (HtmlElement) page2.getFirstByXPath("//div[@class='w1eai al110x xz3ls m1o1o']");
 			
