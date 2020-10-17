@@ -28,4 +28,9 @@ class SharedPrefModule constructor(context: ReactApplicationContext) : ReactCont
     editor.apply()
   }
 
+  @ReactMethod
+  fun getNetflixDate(promise: Promise){
+    promise.resolve(NetflixScraper().date)
+  }
+
 }

@@ -34,11 +34,6 @@ const App: () => React$Node = () => {
                 <ScrollView
                     contentInsetAdjustmentBehavior="automatic"
                     style={styles.scrollView}>
-                    {global.HermesInternal == null ? null : (
-                        <View style={styles.engine}>
-                            <Text style={styles.footer}>Engine: Hermes</Text>
-                        </View>
-                    )}
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Hey</Text>
@@ -47,7 +42,7 @@ const App: () => React$Node = () => {
                                 This is a Sample project to understand how native modules work in React Native.
               </Text>
                             <Button title={'xd'} onPress={() => {
-                                SharedPref.getString("test1")
+                                SharedPref.getNetflixDate()
                                     .then((result) => {
                                             console.log(result)
                                             ToastAndroid.show(result, ToastAndroid.LONG)
