@@ -72,9 +72,11 @@ class List extends Component {
           />
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-           Smart (8.99zł)         aktywny: 10 dni temu
+           Smart (8.99zł)      aktywny: 10 dni temu
           </Text>
         </TouchableOpacity>
+
+
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}>
@@ -87,7 +89,23 @@ class List extends Component {
           />
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-            Netflix (43.00zł)       aktywny: 30 dni temu
+            Netflix (43.00zł)   aktywny: 30 dni temu
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonPrimeStyle}
+          activeOpacity={0.5}>
+          <Image
+            source={{
+              uri:
+                'https://icons-for-free.com/iconfiles/png/512/amazon+icon-1320194704838275475.png',
+            }}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+            Prime (32.00zł)    aktywny: 9 dni temu
           </Text>
         </TouchableOpacity>
 
@@ -103,7 +121,7 @@ class List extends Component {
           />
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-            HBO GO (35.99zł)  aktywny: 70 dni temu
+            HBO GO (35.99zł) aktywny: 7 dni temu
           </Text>
         </TouchableOpacity>
 
@@ -119,7 +137,7 @@ class List extends Component {
           />
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-            Spotify (19.99zł)     aktywny: 2 dni temu
+            Spotify (19.99zł)   aktywny: 2 dni temu
           </Text>
         </TouchableOpacity>
 
@@ -145,6 +163,16 @@ const styles = StyleSheet.create ({
       flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: 'black',
+      borderWidth: 0.5,
+      borderColor: '#fff',
+      height: 40,
+      borderRadius: 5,
+      margin: 5,
+    },
+    buttonPrimeStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#FF8E2E',
       borderWidth: 0.5,
       borderColor: '#fff',
       height: 40,

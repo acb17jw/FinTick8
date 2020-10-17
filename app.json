@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "HelloWorld",
+    "name": "SubScanner",
     "slug": "FinTick",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,7 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

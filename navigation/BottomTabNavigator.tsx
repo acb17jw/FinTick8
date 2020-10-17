@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import SpendingsScreen from '../screens/SpendingsScreen';
 import HomeScreen from '../screens/HomeScreen';
-import { BottomTabParamList, TabTwoParamList, HomeParamList } from '../types';
+import { BottomTabParamList, SpendingsParamList, HomeParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -47,7 +47,7 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const SpendingsStack = createStackNavigator<TabOneParamList>();
+const SpendingsStack = createStackNavigator<SpendingsParamList>();
 
 function SpendingsNavigator() {
   return (
@@ -55,7 +55,7 @@ function SpendingsNavigator() {
       <SpendingsStack.Screen
         name="SpendingsScreen"
         component={SpendingsScreen}
-        options={{ headerTitle: 'Tab One Title!!!!!' }}
+        options={{ headerTitle: 'SubScanner' }}
       />
     </SpendingsStack.Navigator>
   );
