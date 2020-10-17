@@ -1,11 +1,9 @@
 package com.nativemodule
 
 import android.content.Context
+import com.facebook.react.bridge.*
 
-import com.facebook.react.bridge.Promise
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
+import java.time.LocalDateTime
 
 class SharedPrefModule constructor(context: ReactApplicationContext) : ReactContextBaseJavaModule(context) {
 
@@ -30,7 +28,18 @@ class SharedPrefModule constructor(context: ReactApplicationContext) : ReactCont
 
   @ReactMethod
   fun getNetflixDate(promise: Promise){
-    promise.resolve(NetflixScraper().date)
+    promise.resolve(LocalDateTime.now())
   }
 
+  @ReactMethod
+  fun getAllDates(promise: Promise){
+    var array = WritableNativeArray()
+
+    array.pushString("2020-10-10 12:58:31")
+    array.pushString("2020-10-08 14:33:13")
+    array.pushString("2020-10-07 15:46:32")
+    array.pushString("2020-10-05 22:51:33")
+
+    promise.resolve(array)
+  }
 }
