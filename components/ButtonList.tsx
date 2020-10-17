@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Provider as PaperProvider} from 'react-native-paper'
-import { Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import { Text, ScrollView, TouchableOpacity, StyleSheet, Image, View } from 'react-native'
 import { Button } from 'react-native-paper';   
 import { SafeAreaView } from 'react-native-safe-area-context';
 class List extends Component {
@@ -59,6 +59,7 @@ class List extends Component {
       return (
          <PaperProvider>
             <SafeAreaView style={{height:'92%'}}>
+           
                <ScrollView style={{width: 320,}}>
                   {
                      this.state.names.map((item, index) => (
@@ -97,4 +98,41 @@ const styles = StyleSheet.create ({
    text: {
       color: '#4f603c'
    },
+   buttonGPlusStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#dc4e41',
+      borderWidth: 0.5,
+      borderColor: '#fff',
+      height: 40,
+      borderRadius: 5,
+      margin: 5,
+    },
+    buttonFacebookStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#485a96',
+      borderWidth: 0.5,
+      borderColor: '#fff',
+      height: 40,
+      borderRadius: 5,
+      margin: 5,
+    },
+    buttonImageIconStyle: {
+      padding: 10,
+      margin: 5,
+      height: 25,
+      width: 25,
+      resizeMode: 'stretch',
+    },
+    buttonTextStyle: {
+      color: '#fff',
+      marginBottom: 4,
+      marginLeft: 10,
+    },
+    buttonIconSeparatorStyle: {
+      backgroundColor: '#fff',
+      width: 1,
+      height: 40,
+    },
 })
