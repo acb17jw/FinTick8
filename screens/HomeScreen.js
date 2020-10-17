@@ -1,17 +1,18 @@
-import * as React from 'react';
-import { StyleSheet, SafeAreaView, Button, Image} from 'react-native';
+import React,{Component} from 'react';
+import { StyleSheet, SafeAreaView, Button, Image, View, Text} from 'react-native';
 
-import { Text, View } from '../components/Themed';
 import List from '../components/ButtonList';
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Twoje Subskrybcje:</Text>
+export default class HomeScreen extends Component {
+  render() {
+    return (
+        <View style={styles.container}>
+          <Text style={styles.title}>Twoje Subskrybcje:</Text>
 
-     <List />
-          
-    </View>
-  );
+          <List />
+
+        </View>
+    );
+  }
 }
 const list = [
   {

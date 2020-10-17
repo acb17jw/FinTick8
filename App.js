@@ -25,35 +25,39 @@ import {
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import SharedPref from "./SharedPref";
+import HomeScreen from "./screens/HomeScreen";
+import SpendingsScreen from "./screens/SpendingsScreen";
 
 const App: () => React$Node = () => {
     return (
         <>
-            <StatusBar barStyle="dark-content" />
-            <SafeAreaView>
-                <ScrollView
-                    contentInsetAdjustmentBehavior="automatic"
-                    style={styles.scrollView}>
-                    <View style={styles.body}>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Hey</Text>
-                            <Text style={styles.sectionDescription}>
-                                PLEASE
-                                This is a Sample project to understand how native modules work in React Native.
-              </Text>
-                            <Button title={'xd'} onPress={() => {
-                                SharedPref.getNetflixDate()
-                                    .then((result) => {
-                                            console.log(result)
-                                            ToastAndroid.show(result, ToastAndroid.LONG)
-                                        }
-                                    )
-                            }}>XD</Button>
-                        </View>
+            <HomeScreen/>
+            {/*<SpendingsScreen/>*/}
+            {/*<StatusBar barStyle="dark-content" />*/}
+            {/*<SafeAreaView>*/}
+            {/*    <ScrollView*/}
+            {/*        contentInsetAdjustmentBehavior="automatic"*/}
+            {/*        style={styles.scrollView}>*/}
+            {/*        <View style={styles.body}>*/}
+            {/*            <View style={styles.sectionContainer}>*/}
+            {/*                <Text style={styles.sectionTitle}>Hey</Text>*/}
+            {/*                <Text style={styles.sectionDescription}>*/}
+            {/*                    PLEASE*/}
+            {/*                    This is a Sample project to understand how native modules work in React Native.*/}
+            {/*  </Text>*/}
+            {/*                <Button title={'xd'} onPress={() => {*/}
+            {/*                    SharedPref.getNetflixDate()*/}
+            {/*                        .then((result) => {*/}
+            {/*                                console.log(result)*/}
+            {/*                                ToastAndroid.show(result, ToastAndroid.LONG)*/}
+            {/*                            }*/}
+            {/*                        )*/}
+            {/*                }}>XD</Button>*/}
+            {/*            </View>*/}
 
-                    </View>
-                </ScrollView>
-            </SafeAreaView>
+            {/*        </View>*/}
+            {/*    </ScrollView>*/}
+            {/*</SafeAreaView>*/}
         </>
     );
 };
